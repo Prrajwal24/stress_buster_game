@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sea Horse Adventure - 2D Game</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="game-container">
+        <!-- Start Screen -->
+        <div id="start-screen" class="screen">
+            <h1>🐴 Sea Horse Adventure</h1>
+            <p>Use Arrow Keys to move up/down</p>
+            <p>Press Spacebar to shoot fireballs</p>
+            <button id="start-btn">Start Game</button>
+            <div id="high-scores">
+                <h3>High Scores</h3>
+                <ul id="high-scores-list"></ul>
+            </div>
+        </div>
+
+        <!-- Game Screen -->
+        <div id="game-screen" class="screen hidden">
+            <canvas id="game-canvas"></canvas>
+            <div id="game-ui">
+                <div id="score-display">Score: <span id="score-value">0</span></div>
+            </div>
+        </div>
+
+        <!-- Game Over Screen -->
+        <div id="game-over-screen" class="screen hidden">
+            <h1>Game Over!</h1>
+            <p>Final Score: <span id="final-score">0</span></p>
+            <input type="text" id="player-name" placeholder="Enter your name" maxlength="20">
+            <button id="save-score-btn">Save Score</button>
+            <button id="restart-btn">Play Again</button>
+            <button id="menu-btn">Main Menu</button>
+        </div>
+    </div>
+
+    <!-- Audio elements -->
+    <audio id="bg-music" loop>
+        <source src="assets/bg-music.mp3" type="audio/mpeg">
+    </audio>
+    <audio id="shoot-sound">
+        <source src="assets/shoot.mp3" type="audio/mpeg">
+    </audio>
+    <audio id="hit-sound">
+        <source src="assets/hit.mp3" type="audio/mpeg">
+    </audio>
+
+    <!-- JavaScript Modules -->
+    <script type="module" src="js/input.js"></script>
+    <script type="module" src="js/audio.js"></script>
+    <script type="module" src="js/fireball.js"></script>
+    <script type="module" src="js/monster.js"></script>
+    <script type="module" src="js/seahorse.js"></script>
+    <script type="module" src="js/game.js"></script>
+</body>
+</html>
+
